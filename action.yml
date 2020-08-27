@@ -9,17 +9,21 @@ inputs:
   args:
     description: 'woke arguments'
     default: '.'
+    required: false
   fail-on-error:
     description: |
       Exit code when errors are found [true,false]
       Default is `false`.
     default: 'false'
+    required: false
   workdir:
     description: 'Working directory relative to the root directory.'
     default: '.'
+    required: false
   version:
     description: 'woke version'
     default:  '' # uses latest, should be pinned? # 'v0.1'
+    required: false
 runs:
   using: 'composite'
   steps:
