@@ -31,10 +31,10 @@ jobs:
 
 Inputs to configure the `woke` GitHub Actions.
 
-| Input            | Default               | Description                                                                                     |
-|------------------|-----------------------|-------------------------------------------------------------------------------------------------|
-| `args`           | `.`                   | (Optional) Additional flags to run woke with (see https://github.com/caitlinelfring/woke#usage) |
-| `fail-on-error`  | `false`               | (Optional) Fail the GitHub Actions check for any failures.                                      |
-| `workdir`        | `.`                   | (Optional) Run `woke` this working directory relative to the root directory.                    |
-| `version`        | ``                    | (Optional) Uses the latest release of `woke`                                                    |
-| `github-token`   | `${{ github.token }}` | (Optional) Custom GitHub Access token (ie `${{ secrets.MY_CUSTOM_TOKEN }}`).                    |
+| Input            | Default               | Description                                                                                       |
+|------------------|-----------------------|---------------------------------------------------------------------------------------------------|
+| `args`           | `.`                   | (Optional) Additional flags to run woke with (see <https://github.com/caitlinelfring/woke#usage>) |
+| `fail-on-error`  | `false`               | (Optional) Fail the GitHub Actions check for any failures.                                        |
+| `workdir`        | `.`                   | (Optional) Run `woke` this working directory relative to the root directory.                      |
+| `version`        | latest                | (Optional) Release version of `woke` (defaults to latest version)                                 |
+| `github-token`   | `${{ github.token }}` | (Optional) Custom GitHub Access token (ie `${{ secrets.MY_CUSTOM_TOKEN }}`).                      |
