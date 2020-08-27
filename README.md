@@ -23,7 +23,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: 'woke'
-        uses: caitlinelfring/woke-action@master
+        uses: caitlinelfring/woke-action@v0
         with:
           # Cause the check to fail on any broke rules
           fail_on_error: true
