@@ -1,5 +1,5 @@
 name: 'Run woke'
-description: 'Run woke with reviewdog on pull requests to detect non-inclusive language in your source code.'
+description: 'Run woke on pull requests to detect non-inclusive language in your source code.'
 author: 'Caitlin Elfring (caitlinelfring)'
 inputs:
   github-token:
