@@ -7,5 +7,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: ./
+
+  test-fail:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./
         with:
+          # Cause the check to fail on any broke rules
           fail-on-error: true
