@@ -5,8 +5,8 @@ cd "${GITHUB_WORKSPACE}/${INPUT_WORKDIR}" || exit 1
 TEMP_PATH="$(mktemp -d)"
 PATH="${TEMP_PATH}:$PATH"
 
-echo '::group:: Installing woke ... https://github.com/caitlinelfring/woke'
-curl -sfL https://raw.githubusercontent.com/caitlinelfring/woke/main/install.sh | sh -s -- -b "${TEMP_PATH}" "${INPUT_WOKE_VERSION}" 2>&1
+echo '::group:: Installing woke ... https://github.com/get-woke/woke'
+curl -sfL https://raw.githubusercontent.com/get-woke/woke/main/install.sh | sh -s -- -b "${TEMP_PATH}" "${INPUT_WOKE_VERSION}" 2>&1
 echo '::endgroup::'
 
 echo '::group:: Running woke ...'
