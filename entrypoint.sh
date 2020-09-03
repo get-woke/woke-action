@@ -12,6 +12,6 @@ echo '::endgroup::'
 echo '::group:: Running woke ...'
 woke \
   --output github-actions \
-  --exit-1-on-failure="${INPUT_FAIL_ON_ERROR:-false}"
+  --exit-1-on-failure="${INPUT_FAIL_ON_ERROR:-false}" \
   ${INPUT_WOKE_ARGS}
 echo '::endgroup::'
