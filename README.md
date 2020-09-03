@@ -45,3 +45,34 @@ Inputs to configure the `woke` GitHub Actions.
 
 This application is licensed under the MIT License, you may obtain a copy of it
 [here](https://github.com/get-woke/woke-action/blob/main/LICENSE).
+
+## Only Changed Files
+
+If you're interested in only running `woke` against files that have changed in a PR,
+consider something like [Get All Changed Files Action](https://github.com/marketplace/actions/get-all-changed-files). With this, you can add a workflow that looks like:
+
+```yaml
+
+name: 'woke'
+on:
+  - pull_request
+jobs:
+  woke:
+    name: 'woke'
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v2
+
+      - uses: jitterbit/get-changed-files@v1
+        id: files
+
+      - name: 'woke'
+        uses: get-woke/woke-action@v0
+        with:
+          # Cause the check to fail on any broke rules
+          fail-on-error: true
+          # See https://github.com/marketplace/actions/get-all-changed-files
+          # for more options
+          woke-args: ${{ steps.files.outputs.added_modified }}
+```
