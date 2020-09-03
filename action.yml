@@ -2,15 +2,15 @@ name: 'Run woke'
 description: 'Run woke on pull requests to detect non-inclusive language in your source code.'
 author: 'Caitlin Elfring (caitlinelfring)'
 inputs:
-  github_token:
+  github-token:
     description: 'GITHUB_TOKEN'
     required: true
     default: ${{ github.token }}
-  woke_args:
+  woke-args:
     description: 'woke arguments'
     default: '.'
     required: false
-  fail_on_error:
+  fail-on-error:
     description: |
       Exit code when errors are found [true,false]
       Default is `false`.
@@ -20,7 +20,7 @@ inputs:
     description: 'Working directory relative to the root directory.'
     default: '.'
     required: false
-  woke_version:
+  woke-version:
     description: 'woke version'
     default:  '' # uses latest, should be pinned? # 'v0.1'
     required: false
@@ -32,10 +32,10 @@ runs:
       env:
         # INPUT_<VARIABLE_NAME> is not available in Composite run steps
         # https://github.com/actions/runner/issues/665
-        INPUT_GITHUB_TOKEN: ${{ inputs.github_token }}
-        INPUT_WOKE_VERSION: ${{ inputs.version }}
-        INPUT_WOKE_FLAGS: ${{ inputs.woke_args }}
-        INPUT_FAIL_ON_ERROR: ${{ inputs.fail_on_error }}
+        INPUT_GITHUB_TOKEN: ${{ inputs.github-token }}
+        INPUT_WOKE_VERSION: ${{ inputs.woke-version }}
+        INPUT_WOKE_ARGS: ${{ inputs.woke-args }}
+        INPUT_FAIL_ON_ERROR: ${{ inputs.fail-on-error }}
         INPUT_WORKDIR: ${{ inputs.workdir }}
 branding:
   icon: 'check-circle'
