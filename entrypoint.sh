@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 cd "${GITHUB_WORKSPACE}/${INPUT_WORKDIR}" || exit 1
 
 TEMP_PATH="$(mktemp -d)"
