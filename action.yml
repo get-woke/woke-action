@@ -21,8 +21,8 @@ inputs:
     default: '.'
     required: false
   woke-version:
-    description: 'woke version'
-    default:  '' # uses latest, should be pinned? # 'v0.1'
+    description: 'woke version, defaults to the latest `v0` version. Override to pin to a specific version'
+    default:  'v0'
     required: false
 runs:
   using: 'composite'
